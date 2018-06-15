@@ -14,10 +14,10 @@ spring:
 logging:
   level:
     com.sun: 'OFF'
-    com.netflix.discovery: 'OFF'
+    # com.netflix.discovery: 'OFF'
     org.springframework.aop: 'OFF'
     org.springframework.boot.autoconfigure.logging: 'OFF'
-    root: 'DEBUG'
+    root: 'INFO'
 
 management:
   context-path: /admin
