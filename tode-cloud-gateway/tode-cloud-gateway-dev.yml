@@ -1,0 +1,34 @@
+info:
+  component: tode-cloud-gateway
+
+server:
+  port: 8880
+
+spring:
+  main:
+    banner-mode: "off"
+  output:
+    ansi:
+      enabled: always
+
+management:
+  context-path: /admin
+  security:
+    enabled: false
+
+zuul:
+  add-host-header: true
+  routes:
+    tode-cloud-demoservice: # 微服务的serviceId
+      path: /api/** # path 将serviceId对应的访问url进行了转换。
+      serviceId: tode-cloud-demoservice
+
+eureka:
+  client:
+    region: default
+    service-url:
+      defaultZone: http://192.168.1.88:8882/eureka
+
+logging:
+  level:
+    root: 'INFO'
