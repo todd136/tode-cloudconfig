@@ -16,7 +16,7 @@ logging:
 
 spring:
   main:
-    banner-mode: "on"
+    banner-mode: "off"
   output:
     ansi:
       enabled: always
