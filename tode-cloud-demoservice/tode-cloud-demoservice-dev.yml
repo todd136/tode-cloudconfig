@@ -1,3 +1,10 @@
+info:
+  component: tode-cloud-demoservice
+
+server:
+  port: 8080
+  maxHttpHeaderSize: 8192
+
 #spring.config
 spring:
   main:
@@ -14,7 +21,7 @@ spring:
 logging:
   level:
     com.sun: 'OFF'
-    # com.netflix.discovery: 'OFF'
+    com.netflix.discovery: 'OFF'
     org.springframework.aop: 'OFF'
     org.springframework.boot.autoconfigure.logging: 'OFF'
     root: 'INFO'
