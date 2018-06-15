@@ -1,0 +1,39 @@
+#spring.config
+spring:
+  main:
+    banner-mode: "off"
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/views/
+#      suffix: .jsp
+#    favicon:
+#      enabled: true
+
+
+#logging.config 可以使用logback-spring.xml来配置日志
+logging:
+  level:
+    com.sun: 'OFF'
+    com.netflix.discovery: 'OFF'
+    org.springframework.aop: 'OFF'
+    org.springframework.boot.autoconfigure.logging: 'OFF'
+    root: 'DEBUG'
+
+management:
+  context-path: /admin
+
+#eureka.client.config
+eureka:
+  instance:
+    status-page-url-path: /info
+    health-check-url-path: /path
+    lease-renewal-interval-in-seconds: 10
+  client:
+    region: default
+    service-url:
+      defaultZone: http://192.168.1.88:8882/eureka
+
+feign:
+  compression:
+    request:
+      mime-types: text/xml, application/xml, application/json

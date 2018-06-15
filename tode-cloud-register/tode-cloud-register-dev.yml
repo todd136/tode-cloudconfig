@@ -1,0 +1,30 @@
+management:
+  context-path: /admin
+  security:
+    enabled: false
+
+logging:
+  level:
+#    com.netflix.discovery: 'OFF'
+    root: 'DEBUG'
+
+spring:
+  main:
+    banner-mode: "off"
+  output:
+    ansi:
+      enabled: always
+
+#eureka.config
+eureka:
+  instance:
+    hostname: 192.168.1.88
+    prefer-ip-address: true
+  client:
+    region: default
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 0
