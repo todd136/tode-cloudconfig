@@ -32,9 +32,11 @@ management:
 #eureka.client.config
 eureka:
   instance:
+#    hostname: 192.168.1.88
     status-page-url-path: /info
     health-check-url-path: /path
     lease-renewal-interval-in-seconds: 10
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
   client:
     region: default
     service-url:
