@@ -3,7 +3,7 @@ info:
   component: tode-cloud-register
 
 server:
-  port: 8882
+  port: 8761 # eureka server default port
 
 management:
   context-path: /admin
