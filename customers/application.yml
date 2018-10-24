@@ -32,6 +32,8 @@ eureka:
     registryFetchIntervalSeconds: 5
     availabilityZones: 
       default: ${APPLICATION_DOMAIN:${DOMAIN:defaultZone}}
+#    service-url:
+#      defaultZone: http://localhost:8882/eureka/ #当eureka服务使用默认8761端口时，@EnableEurekaClient会自动连接http://localhost:8761
 
 # For demo only allow more hystrix connections
 hystrix:
