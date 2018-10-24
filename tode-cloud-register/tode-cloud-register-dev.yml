@@ -1,3 +1,4 @@
+### 开发时，从本地获取，后续改为从config server获取配置 ###
 info:
   component: tode-cloud-register
 
@@ -24,7 +25,7 @@ spring:
 #eureka.config
 eureka:
   instance:
-    hostname: 192.168.1.88
+    hostname: loalhost #192.168.1.88
     prefer-ip-address: true
   client:
     region: default
