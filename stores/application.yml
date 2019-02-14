@@ -28,8 +28,8 @@ eureka:
   client:
     region: default
     registryFetchIntervalSeconds: 5
-#    service-url:
-#      defaultZone: http://localhost:8882/eureka/
+    service-url:
+      defaultZone: http://localhost:8882/eureka/
 
 logging:
   level:
