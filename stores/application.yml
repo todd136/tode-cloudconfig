@@ -39,3 +39,6 @@ logging:
 ---
 spring:
   profiles: dev
+
+server:
+  port: 8081
