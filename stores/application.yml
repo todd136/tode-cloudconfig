@@ -1,8 +1,17 @@
-info:
-  component: stores
-
 server:
   port: 8081
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
 
 spring:
   data:
@@ -10,7 +19,6 @@ spring:
       uri: ${vcap.services.${PREFIX:}mongodb.credentials.uri:mongodb://${MONGODB_HOST:localhost}:${MONGODB_PORT:27017}/stores}
   rabbitmq:
     addresses: ${vcap.services.${PREFIX:}rabbitmq.credentials.uri:amqp://${RABBITMQ_HOST:localhost}:${RABBITMQ_PORT:5672}}
-
 
 eureka:
   instance:
@@ -19,24 +27,10 @@ eureka:
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
   client:
-    region: default
     registryFetchIntervalSeconds: 5
-    service-url:
-      defaultZone: http://localhost:8882/eureka/
+    service-url: http://192.168.1.67:8882/eureka/
 
 logging:
   level:
     com.netflix.discovery: 'OFF'
-
----
-spring:
-  profiles: dev
-  data:
-    mongodb:
-      uri: ${vcap.services.${PREFIX:}mongodb.credentials.uri:mongodb://${MONGODB_HOST:localhost}:${MONGODB_PORT:27017}/stores}
-  rabbitmq:
-    addresses: ${vcap.services.${PREFIX:}rabbitmq.credentials.uri:amqp://${RABBITMQ_HOST:localhost}:${RABBITMQ_PORT:5672}}
-
-server:
-  port: 8082
 
