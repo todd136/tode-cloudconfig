@@ -1,21 +1,20 @@
+info:
+  component: stores
+
 server:
   port: 8081
 
----
 spring:
-  profiles: default
   data:
     mongodb:
       uri: ${vcap.services.${PREFIX:}mongodb.credentials.uri:mongodb://${MONGODB_HOST:localhost}:${MONGODB_PORT:27017}/stores}
   rabbitmq:
     addresses: ${vcap.services.${PREFIX:}rabbitmq.credentials.uri:amqp://${RABBITMQ_HOST:localhost}:${RABBITMQ_PORT:5672}}
 
-server:
-  port: 8081
 
 eureka:
   instance:
-    hostname: 192.168.1.67
+#    hostname: 192.168.1.67
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
@@ -32,7 +31,12 @@ logging:
 ---
 spring:
   profiles: dev
+  data:
+    mongodb:
+      uri: ${vcap.services.${PREFIX:}mongodb.credentials.uri:mongodb://${MONGODB_HOST:localhost}:${MONGODB_PORT:27017}/stores}
+  rabbitmq:
+    addresses: ${vcap.services.${PREFIX:}rabbitmq.credentials.uri:amqp://${RABBITMQ_HOST:localhost}:${RABBITMQ_PORT:5672}}
 
 server:
-  port: 8081
+  port: 8082
 
