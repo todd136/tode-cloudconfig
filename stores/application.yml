@@ -35,3 +35,7 @@ eureka:
 logging:
   level:
     com.netflix.discovery: 'OFF'
+
+---
+spring:
+  profiles: dev
