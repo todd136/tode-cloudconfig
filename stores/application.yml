@@ -27,6 +27,7 @@ eureka:
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
   client:
+    region: default
     registryFetchIntervalSeconds: 5
     #service-url: 
       #default-zone: http://192.168.1.67:8882/eureka/
@@ -34,5 +35,5 @@ eureka:
 
 logging:
   level:
-    com.netflix.discovery: 'OFF'
+    com.netflix.discovery: 'INFO'
 
