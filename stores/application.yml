@@ -35,5 +35,5 @@ eureka:
 
 logging:
   level:
-    com.netflix.discovery: 'INFO'
+    com.netflix.discovery: 'DEBUG'
 
