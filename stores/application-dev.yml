@@ -35,4 +35,5 @@ eureka:
 logging:
   level:
     com.netflix.discovery: 'OFF'
+    root: 'DEBUG'
 
