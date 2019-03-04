@@ -22,15 +22,15 @@ spring:
 
 eureka:
   instance:
-#    hostname: 192.168.1.67
+    hostname: 192.168.1.67
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
   client:
     registryFetchIntervalSeconds: 5
     service-url: 
-      defaultZone: http://localhost:8882/eureka/
-      #default-zone: http://192.168.1.67:8882/eureka/
+      #defaultZone: http://localhost:8882/eureka/
+      default-zone: http://192.168.1.67:8882/eureka/
 
 logging:
   level:
